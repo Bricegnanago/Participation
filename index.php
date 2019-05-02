@@ -33,7 +33,7 @@
             $id = $db->lastInsertId();          
             echo $id;
             $req = $db->prepare("INSERT INTO enregistrement(id_payeur, montant)  VALUES(?, ?)");
-            $insert = $req->execute([$id, $_POST["montant"]]);
+            $insert = $req->execute([$id, floatval($_POST["montant"])]);
 
       }
 
